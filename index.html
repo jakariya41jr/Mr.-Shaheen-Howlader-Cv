@@ -55,27 +55,19 @@
             margin-bottom: 35px;
         }
 
-        .profile-img-container {
-            position: relative;
-            display: inline-flex;
-            padding: 4px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #e0e7ff 0%, #2563eb 100%);
-            box-shadow: 0 12px 30px rgba(37, 99, 235, 0.25);
-            transition: transform var(--transition-speed);
-        }
-        
-        .profile-img-container:hover {
-            transform: scale(1.02);
-        }
-
+        /* প্রোফাইল ইমেজ স্টাইল - একীভূত ফ্রেম এবং শ্যাডো */
         .profile-img {
             width: 175px;
             height: 175px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid var(--surface-color);
-            background-color: var(--surface-color);
+            border: 6px solid var(--accent-color); /* Light Indigo frame, integrated */
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.15); /* Integrated shadow, subtle */
+            transition: transform var(--transition-speed);
+        }
+        
+        .profile-img:hover {
+            transform: scale(1.02);
         }
 
         .header-info {
@@ -437,9 +429,7 @@
 
 <div class="container">
     <div class="header">
-        <div class="profile-img-container">
-            <img src="https://github.com/mdjakariyahasan753-ui/Mr.-Shaheen-Howlader/raw/refs/heads/main/profile.jpg" alt="Mr. Shaheen Howlader" class="profile-img">
-        </div>
+        <img src="https://github.com/mdjakariyahasan753-ui/Mr.-Shaheen-Howlader/raw/refs/heads/main/profile.jpg" alt="Mr. Shaheen Howlader" class="profile-img">
         <div class="header-info">
             <h1>Mr. Shaheen Howlader</h1>
             <div class="contact-grid">
