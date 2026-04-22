@@ -43,65 +43,96 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
 
-        /* --- Header Section --- */
+        /* --- Header Section (উন্নত এবং মাঝখানে আনা হয়েছে) --- */
         .header {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 30px;
+            text-align: center;
+            gap: 20px;
             border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 30px;
-            margin-bottom: 30px;
+            padding-bottom: 35px;
+            margin-bottom: 35px;
+        }
+
+        .profile-img-container {
+            position: relative;
+            display: inline-flex;
+            padding: 4px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e0e7ff 0%, #2563eb 100%);
+            box-shadow: 0 12px 30px rgba(37, 99, 235, 0.25);
+            transition: transform var(--transition-speed);
+        }
+        
+        .profile-img-container:hover {
+            transform: scale(1.02);
         }
 
         .profile-img {
-            width: 160px;
-            height: 160px;
+            width: 175px;
+            height: 175px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid var(--surface-color);
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+            border: 5px solid var(--surface-color);
+            background-color: var(--surface-color);
         }
 
         .header-info {
             flex: 1;
+            width: 100%;
         }
 
         .header-info h1 {
             color: var(--primary-color);
-            font-size: 32px;
+            font-size: 34px;
             font-weight: 700;
             margin-bottom: 12px;
             letter-spacing: 0.5px;
         }
 
+        /* Contact grid কে আরও সুন্দর পিল-স্টাইল করা হয়েছে */
         .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px 20px;
             font-size: 14.5px;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             color: var(--text-muted);
+            background-color: var(--bg-color);
+            padding: 8px 18px;
+            border-radius: 50px;
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-speed);
+        }
+
+        .contact-item:hover {
+            background-color: var(--accent-color);
+            border-color: var(--secondary-color);
+            transform: translateY(-2px);
         }
 
         .contact-item i {
             color: var(--secondary-color);
-            width: 16px;
+            font-size: 16px;
             text-align: center;
         }
 
-        .contact-item a {
+        .contact-item a, .contact-item span {
             color: var(--text-muted);
             text-decoration: none;
             transition: color var(--transition-speed);
+            font-weight: 500;
         }
 
-        .contact-item a:hover {
-            color: var(--secondary-color);
+        .contact-item:hover a, .contact-item:hover span {
+            color: var(--primary-color);
         }
 
         /* --- Objective Section --- */
@@ -359,14 +390,13 @@
             .container {
                 padding: 30px 20px;
             }
-            .header {
-                flex-direction: column;
-                text-align: center;
-                gap: 20px;
-            }
             .contact-grid {
-                grid-template-columns: 1fr;
-                justify-items: center;
+                flex-direction: column;
+                align-items: center;
+            }
+            .contact-item {
+                width: 100%;
+                justify-content: center;
             }
             .tabs-container {
                 flex-direction: column;
@@ -407,7 +437,9 @@
 
 <div class="container">
     <div class="header">
-        <img src="https://github.com/mdjakariyahasan753-ui/Mr.-Shaheen-Howlader/raw/refs/heads/main/profile.jpg" alt="Mr. Shaheen Howlader" class="profile-img">
+        <div class="profile-img-container">
+            <img src="https://github.com/mdjakariyahasan753-ui/Mr.-Shaheen-Howlader/raw/refs/heads/main/profile.jpg" alt="Mr. Shaheen Howlader" class="profile-img">
+        </div>
         <div class="header-info">
             <h1>Mr. Shaheen Howlader</h1>
             <div class="contact-grid">
