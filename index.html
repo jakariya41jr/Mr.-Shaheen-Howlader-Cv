@@ -320,12 +320,38 @@
         }
 
         .developer-credit {
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
             margin-top: 60px;
-            font-size: 12px;
-            color: #94a3b8;
+            font-size: 11px;
+            color: var(--text-muted);
             font-weight: 500;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
+        }
+
+        .dev-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 10px;
+            font-size: 10px;
+            border-radius: 20px;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            transition: background-color var(--transition-speed);
+            font-weight: 600;
+        }
+
+        .dev-link-btn:hover {
+            background-color: #1d4ed8;
+            color: white;
+        }
+
+        .dev-link-btn i {
+            font-size: 9px;
         }
 
         /* --- Responsive Design --- */
@@ -366,6 +392,14 @@
                 gap: 40px;
                 align-items: center;
             }
+            .developer-credit {
+                font-size: 10px;
+                gap: 5px;
+            }
+            .dev-link-btn {
+                padding: 2px 8px;
+                font-size: 9px;
+            }
         }
     </style>
 </head>
@@ -373,7 +407,7 @@
 
 <div class="container">
     <div class="header">
-        <img src="1000470244.jpg" alt="Mr. Shaheen Howlader" class="profile-img">
+        <img src="https://github.com/mdjakariyahasan753-ui/Mr.-Shaheen-Howlader/raw/refs/heads/main/profile.jpg" alt="Mr. Shaheen Howlader" class="profile-img">
         <div class="header-info">
             <h1>Mr. Shaheen Howlader</h1>
             <div class="contact-grid">
@@ -568,7 +602,11 @@
     </div>
 
     <div class="developer-credit">
-        Made By Md Jakariya Hasan
+        Developed by JRS
+        <a href="https://jakariya41jr.xyz/" target="_blank" class="dev-link-btn">
+            <i class="fas fa-external-link-alt"></i>
+            Visit
+        </a>
     </div>
 
 </div>
