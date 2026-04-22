@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume of Mr. Shaheen Howlader</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         :root {
-            --primary-color: #1a365d;
-            --secondary-color: #2b6cb0;
-            --bg-color: #f7fafc;
-            --text-color: #2d3748;
+            --primary-color: #0f172a;
+            --secondary-color: #3b82f6;
+            --accent-color: #e0f2fe;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --bg-body: #f1f5f9;
+            --bg-card: #ffffff;
             --border-color: #e2e8f0;
         }
 
@@ -17,216 +24,329 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding: 20px;
         }
 
         .container {
-            max-width: 900px;
-            margin: 40px auto;
-            background: #fff;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            border-top: 6px solid var(--secondary-color);
         }
 
-        /* Header Section */
+        /* --- Header Section --- */
         .header {
             display: flex;
             align-items: center;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 20px;
-            margin-bottom: 20px;
+            justify-content: space-between;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 30px;
+            margin-bottom: 30px;
         }
 
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 10px;
-            object-fit: cover;
-            border: 3px solid var(--primary-color);
-            margin-right: 30px;
+        .header-content {
+            flex: 1;
         }
 
-        .header-info h1 {
+        .header-content h1 {
             color: var(--primary-color);
-            font-size: 28px;
-            margin-bottom: 10px;
-            text-transform: uppercase;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 15px;
             letter-spacing: 1px;
         }
 
-        .header-info p {
-            font-size: 16px;
-            margin-bottom: 5px;
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            font-size: 15px;
         }
 
-        .header-info a {
-            color: var(--secondary-color);
-            text-decoration: none;
-        }
-
-        .objective {
-            background: #ebf8ff;
-            padding: 15px;
-            border-left: 4px solid var(--secondary-color);
-            margin-bottom: 30px;
-            font-style: italic;
-        }
-
-        /* Tabs Section */
-        .tabs {
+        .contact-item {
             display: flex;
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--border-color);
+            align-items: center;
+            gap: 10px;
+            color: var(--text-light);
+        }
+
+        .contact-item i {
+            color: var(--secondary-color);
+            font-size: 18px;
+            width: 20px;
+        }
+
+        .contact-item a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: var(--secondary-color);
+        }
+
+        .profile-img-container {
+            margin-left: 40px;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent-color);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* --- Objective Section --- */
+        .objective {
+            background: var(--accent-color);
+            padding: 20px 25px;
+            border-radius: 8px;
+            border-left: 5px solid var(--secondary-color);
+            margin-bottom: 40px;
+            font-style: italic;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        /* --- TABS SECTION (Highly Focused) --- */
+        .tabs-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            padding: 10px;
+            background: #f8fafc;
+            border-radius: 50px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
         }
 
         .tab-btn {
-            background-color: inherit;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            padding: 14px 20px;
-            transition: 0.3s;
+            background: transparent;
+            border: 2px solid transparent;
+            padding: 12px 30px;
             font-size: 16px;
-            font-weight: bold;
-            color: var(--text-color);
-            border-bottom: 3px solid transparent;
-            margin-bottom: -2px;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .tab-btn:hover {
             color: var(--secondary-color);
+            background: var(--accent-color);
         }
 
         .tab-btn.active {
-            color: var(--primary-color);
-            border-bottom: 3px solid var(--primary-color);
+            background: var(--secondary-color);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+            border-color: var(--secondary-color);
         }
 
         .tab-content {
             display: none;
-            animation: fadeIn 0.5s;
+            animation: slideFadeUp 0.5s ease;
         }
 
         .tab-content.active {
             display: block;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        @keyframes slideFadeUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Experience Section */
+        /* --- Sections & Timeline --- */
         .section-title {
             color: var(--primary-color);
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 5px;
-            margin: 25px 0 15px 0;
-            font-size: 20px;
+            font-size: 22px;
+            font-weight: 700;
             text-transform: uppercase;
+            margin: 40px 0 25px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::after {
+            content: "";
+            height: 2px;
+            flex: 1;
+            background: var(--border-color);
+            margin-left: 10px;
+        }
+
+        .timeline {
+            border-left: 3px solid var(--accent-color);
+            padding-left: 30px;
+            margin-left: 15px;
         }
 
         .job {
-            margin-bottom: 20px;
+            position: relative;
+            margin-bottom: 35px;
+        }
+
+        .job::before {
+            content: "";
+            position: absolute;
+            left: -39px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px var(--accent-color);
         }
 
         .job-title {
-            font-weight: bold;
-            color: var(--secondary-color);
+            font-weight: 700;
+            color: var(--primary-color);
             font-size: 18px;
+            margin-bottom: 5px;
         }
 
         .company-info {
             font-size: 15px;
-            margin-bottom: 10px;
-            color: #4a5568;
+            color: var(--text-light);
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .company-info strong {
+            color: var(--primary-color);
         }
 
         .job-duties {
-            list-style-type: square;
-            margin-left: 20px;
-            font-size: 14px;
+            list-style-type: none;
         }
 
         .job-duties li {
-            margin-bottom: 5px;
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            font-size: 14.5px;
         }
 
-        /* Common Info Tables */
+        .job-duties li::before {
+            content: "\f105";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+        }
+
+        /* --- Tables & Grids --- */
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 20px;
-            font-size: 14px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
 
         th, td {
             border: 1px solid var(--border-color);
-            padding: 10px;
+            padding: 15px;
             text-align: left;
+            font-size: 14.5px;
         }
 
         th {
-            background-color: #edf2f7;
-            color: var(--primary-color);
+            background-color: var(--primary-color);
+            color: #fff;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 0.5px;
         }
+
+        tr:nth-child(even) { background-color: #f8fafc; }
+        tr:hover { background-color: var(--accent-color); }
 
         .info-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            font-size: 14px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
         }
 
-        .info-item span {
-            font-weight: bold;
-            display: inline-block;
-            width: 130px;
+        .info-card {
+            background: #fff;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            display: flex;
+            align-items: center;
         }
 
-        /* Footer Declaration */
+        .info-card span {
+            font-weight: 600;
+            color: var(--primary-color);
+            width: 140px;
+            flex-shrink: 0;
+        }
+
+        /* --- Footer --- */
         .declaration {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-color);
-            font-size: 14px;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px dashed var(--border-color);
         }
 
-        .signature {
-            margin-top: 50px;
+        .declaration p {
+            font-style: italic;
+            color: var(--text-light);
+            text-align: justify;
+        }
+
+        .signature-box {
+            margin-top: 60px;
             display: flex;
             justify-content: space-between;
+            align-items: flex-end;
         }
 
         .sig-line {
-            border-top: 1px solid #000;
-            width: 200px;
+            border-top: 2px solid var(--primary-color);
+            width: 220px;
             text-align: center;
-            padding-top: 5px;
+            padding-top: 8px;
+            font-weight: 600;
+            color: var(--primary-color);
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                text-align: center;
-            }
-            .profile-img {
-                margin: 0 0 20px 0;
-            }
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-            .tabs {
-                flex-direction: column;
-            }
+        /* --- Responsive --- */
+        @media (max-width: 800px) {
+            .header { flex-direction: column-reverse; text-align: center; }
+            .profile-img-container { margin: 0 0 25px 0; }
+            .contact-info { grid-template-columns: 1fr; justify-items: center; }
+            .tabs-wrapper { flex-direction: column; background: transparent; box-shadow: none; }
+            .tab-btn { justify-content: center; }
+            .info-grid { grid-template-columns: 1fr; }
+            .info-card { flex-direction: column; align-items: flex-start; gap: 5px; }
+            .info-card span { width: auto; }
+            .container { padding: 30px 20px; }
         }
     </style>
 </head>
@@ -234,125 +354,173 @@
 
 <div class="container">
     <div class="header">
-        <img src="profile.jpg" alt="Mr. Shaheen Howlader" class="profile-img">
-        <div class="header-info">
-            <h1>Mr. Shaheen Howlader</h1>
-            <p><strong>Phone:</strong> <a href="tel:01721619520">01721619520</a></p>
-            <p><strong>Email:</strong> <a href="mailto:shaheenhowlader059@gmail.com">shaheenhowlader059@gmail.com</a></p>
-            <p><strong>Location:</strong> Narayangonj, Bangladesh</p>
+        <div class="header-content">
+            <h1>MR. SHAHEEN HOWLADER</h1>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <a href="tel:01721619520">01721619520</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:shaheenhowlader059@gmail.com">shaheenhowlader059@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-brands fa-facebook"></i>
+                    <a href="https://www.facebook.com/share/1HPBJ9F67F/" target="_blank">Facebook Profile</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Narayangonj, Bangladesh</span>
+                </div>
+            </div>
+        </div>
+        <div class="profile-img-container">
+            <img src="profile.jpg" alt="Shaheen Howlader" class="profile-img">
         </div>
     </div>
 
     <div class="objective">
-        <strong>Career Objective:</strong> To obtain a challenging & growth-oriented position in a reputed organization which can challenge my intellect & foster my hidden talent, knowledge experience & skills.
+        <i class="fa-solid fa-quote-left" style="color: var(--secondary-color); margin-right: 10px;"></i>
+        To obtain a challenging & growth-oriented position in a reputed organization which can challenge my intellect & foster my hidden talent, knowledge experience & skills.
     </div>
 
-    <div class="tabs">
-        <button class="tab-btn active" onclick="switchCV(event, 'cv1')">CV Profile 1 (QA Focus - 18 Yrs Exp)</button>
-        <button class="tab-btn" onclick="switchCV(event, 'cv2')">CV Profile 2 (Finishing Focus - 11 Yrs Exp)</button>
+    <div class="tabs-wrapper">
+        <button class="tab-btn active" onclick="switchCV(event, 'cv1')">
+            <i class="fa-solid fa-star"></i> CV: QA Focus (18 Yrs Exp)
+        </button>
+        <button class="tab-btn" onclick="switchCV(event, 'cv2')">
+            <i class="fa-solid fa-briefcase"></i> CV: Finishing Focus (11 Yrs Exp)
+        </button>
     </div>
 
     <div id="cv1" class="tab-content active">
-        <h2 class="section-title">Employment History (Total Experience: 18 years)</h2>
+        <h2 class="section-title"><i class="fa-solid fa-clock-rotate-left"></i> Employment History (18 Years)</h2>
+        
+        <div class="timeline">
+            <div class="job">
+                <div class="job-title">1. Asst. Finishing Manager Quality</div>
+                <div class="company-info">
+                    <i class="fa-regular fa-calendar"></i> January 2022 - April 10, 2026 (Continuing) <br>
+                    <strong>Al-Muslim Group Pvt Ltd.</strong> | Vulta, Rupgonj, Narayangonj<br>
+                    <strong>Buyer:</strong> H&M, C&A, US-Polo, Sol's, Celio, S.Oliver, Tema, Wan G, Alcott, Garma Cb, Cat France
+                </div>
+                <ul class="job-duties">
+                    <li>Maintain desired quality product delivery as per buyer's requirement.</li>
+                    <li>Follow-up the line feeding checklist & check measurement sheet and quality.</li>
+                    <li>Confirm first Inline inspection after 100pcs outputs.</li>
+                    <li>Ensure quality checking in all stages of finishing are maintain & monitoring and measurement procedure is being followed.</li>
+                    <li>Maintain line inspection, accessories inspection, in line inspection & final inspection.</li>
+                    <li>Take corrective action for defected products and follow-up so that no defected product can be sent for finishing from sewing and no defected product can be packed for final delivery.</li>
+                    <li>Follow-up total garments finishing process & check measurement sheet & quality.</li>
+                    <li>Train the subordinates on quality checking procedure and on time checking completion.</li>
+                    <li>Co-ordinate with buyer Quality Control for required quality standard product delivery. Maintain required Management Information System (MIS).</li>
+                </ul>
+            </div>
 
-        <div class="job">
-            <div class="job-title">1. Asst. Finishing Manager Quality (January 2022 - April 10, 2026 / Continuing)</div>
-            <div class="company-info"><strong>Al-Muslim Group Pvt Ltd.</strong> | Vulta, Rupgonj, Narayangonj, Dhaka<br>
-            <strong>Buyer:</strong> H&M, C&A, US-Polo, Sol's, Celio, S.Oliver, Tema, Wan G, Alcott .Garma Cb. Cat France</div>
-            <ul class="job-duties">
-                <li>Maintain desired quality product delivery as per buyer's requirement.</li>
-                <li>Follow-up the line feeding checklist & check measurement sheet and quality.</li>
-                <li>Confirm first Inline inspection after 100pcs outputs.</li>
-                <li>Ensure quality checking in all stages of finishing are maintain & monitoring and measurement procedure is being followed.</li>
-                <li>Maintain line inspection, accessories inspection, in line inspection & final inspection.</li>
-                <li>Take corrective action for defected products and follow-up so that no defected product can be sent for finishing from sewing and no defected product can be packed for final delivery.</li>
-                <li>Follow-up total garments finishing process & check measurement sheet & quality.</li>
-                <li>Train the subordinates on quality checking procedure and on time checking completion.</li>
-                <li>Co-ordinate with buyer Quality Control for required quality standard product delivery. Maintain required Management Information System (MIS).</li>
-            </ul>
-        </div>
+            <div class="job">
+                <div class="job-title">2. Finishing In charge Quality</div>
+                <div class="company-info">
+                    <i class="fa-regular fa-calendar"></i> January 2016 - July 10, 2022 <br>
+                    <strong>Anupam Hosiery Industries Pvt Ltd.</strong> | Vulta, Rupgonj, Narayangonj<br>
+                    <strong>Buyer:</strong> C&A, H&M, S.Oliver, Tema.
+                </div>
+                <ul class="job-duties">
+                    <li>Focuses on department objectives 0% discount/claim, 0% recheck on final inspection.</li>
+                    <li>Ensure quality system & procedures are maintained as per Group/Company and Buyer requirement.</li>
+                    <li>Train/Coach subordinates on subjects related to technicalities, quality methods, and work & product improvement.</li>
+                    <li>Monitor technical details of styles; follow salesman samples, size set, pilot runs.</li>
+                    <li>Ensure production is processed as per buyer requirements (Technical & General specification).</li>
+                    <li>Ensure follow-up of thread, trims and accessories check/ approval.</li>
+                    <li>Take responsibilities to control of floor, in-line, pre-final, Final inspection.</li>
+                    <li>Keep & extend good relation and communication with buyer qc assist inspection.</li>
+                </ul>
+            </div>
 
-        <div class="job">
-            <div class="job-title">2. Finishing In charge Quality (January 2016 - July 10, 2022)</div>
-            <div class="company-info"><strong>Anupam Hosiery Industries Pvt Ltd.</strong> | Vulta, Rupgonj, Narayangonj, Dhaka<br>
-            <strong>Buyer:</strong> C&A, H&M, S.Oliver, Tema.</div>
-            <ul class="job-duties">
-                <li>Focuses on department objectives 0% discount/claim, 0% recheck on final inspection.</li>
-                <li>Ensure quality system & procedures are maintained as per Group/Company and Buyer requirement.</li>
-                <li>Train/Coach subordinates on subjects related to technicalities, quality methods, and work & product improvement. Coach production member where applicable.</li>
-                <li>Monitor technical details of styles; follow salesman samples, size set, pilot runs.</li>
-                <li>Ensure production is processed as per buyer requirements (Technical & General specification).</li>
-                <li>Ensure follow-up of thread, trims and accessories check/ approval.</li>
-                <li>Ensure samples are made to required quality and sent to Head office on time & check samples.</li>
-                <li>Take responsibilities to control of floor, in-line, pre-final, Final inspection.</li>
-                <li>Keep & extend good relation and communication with buyer qc assist inspection.</li>
-            </ul>
-        </div>
+            <div class="job">
+                <div class="job-title">3. Asst. Finishing In charge Quality</div>
+                <div class="company-info">
+                    <i class="fa-regular fa-calendar"></i> September 1, 2010 - December 31, 2016 <br>
+                    <strong>Dress & Dismatic Pvt Ltd.</strong> | Malibagh Chowdhury Para, Khilgaon, Dhaka<br>
+                    <strong>Buyer:</strong> C&A, H&M, S.Oliver, Tema.
+                </div>
+            </div>
 
-        <div class="job">
-            <div class="job-title">3. Asst. Finishing In charge Quality (September 1, 2010 - December 31, 2016)</div>
-            <div class="company-info"><strong>Dress & Dismatic Pvt Ltd.</strong> | 1101, DIT Road, Malibagh Chowdhury Para, Khilgaon, Dhaka<br>
-            <strong>Buyer:</strong> C&A, H&M, S.Oliver, Tema.</div>
-        </div>
-
-        <div class="job">
-            <div class="job-title">4. Finishing Quality Controller (September 1, 2008 - August 2012)</div>
-            <div class="company-info"><strong>Hearty apparels Ltd.</strong> | 1101, DIT Road, Malibagh Chowdhurypara, Khilgaon, Dhaka<br>
-            <strong>Buyer:</strong> C&A, H&M, S.Oliver, Tema, Wong, Alcot etc.</div>
+            <div class="job">
+                <div class="job-title">4. Finishing Quality Controller</div>
+                <div class="company-info">
+                    <i class="fa-regular fa-calendar"></i> September 1, 2008 - August 2012 <br>
+                    <strong>Hearty apparels Ltd.</strong> | Malibagh Chowdhurypara, Khilgaon, Dhaka<br>
+                    <strong>Buyer:</strong> C&A, H&M, S.Oliver, Tema, Wong, Alcot etc.
+                </div>
+            </div>
         </div>
     </div>
 
     <div id="cv2" class="tab-content">
-        <h2 class="section-title">Employment History (Total Experience: 11 years)</h2>
+        <h2 class="section-title"><i class="fa-solid fa-clock-rotate-left"></i> Employment History (11 Years)</h2>
+        
+        <div class="timeline">
+            <div class="job">
+                <div class="job-title">1. Asst. Finishing Manager</div>
+                <div class="company-info">
+                    <i class="fa-regular fa-calendar"></i> July 10, 2016 - Continuing <br>
+                    <strong>Al-Muslim Group Pvt Ltd.</strong> | Vulta, Rupgonj, Narayangonj<br>
+                    <strong>Buyer:</strong> H&M, C&A, US-Polo, Sol's, Celio, S.Oliver, Tema, Wan G, Alcott, Garma Cb, Cat France
+                </div>
+                <ul class="job-duties">
+                    <li>Maintain desired quality product delivery as per buyer's requirement.</li>
+                    <li>Follow-up the line feeding checklist & check measurement sheet and quality.</li>
+                    <li>Confirm first Inline inspection after 100pcs outputs.</li>
+                    <li>Ensure quality checking in all stages of finishing are maintain & monitoring and measurement procedure is being followed.</li>
+                    <li>Maintain line inspection, accessories inspection, in line inspection & final inspection.</li>
+                    <li>Take corrective action for defected products and follow-up so that no defected product can be sent for finishing from sewing and no defected product can be packed for final delivery.</li>
+                    <li>Follow-up total garments finishing process & check measurement sheet & quality.</li>
+                    <li>Train the subordinates on quality checking procedure and on time checking completion.</li>
+                    <li>Co-ordinate with buyer Quality Control for required quality standard product delivery. Maintain required Management Information System (MIS).</li>
+                </ul>
+            </div>
 
-        <div class="job">
-            <div class="job-title">1. Asst. Finishing Manager (July 10, 2016 - Continuing)</div>
-            <div class="company-info"><strong>Al-Muslim Group Pvt Ltd.</strong> | Vulta, Rupgonj, Narayangonj, Dhaka<br>
-            <strong>Buyer:</strong> H&M, C&A, US-Polo, Sol's, Celio, S.Oliver, Tema, Wan G, Alcott .Garma Cb. Cat France</div>
-            <ul class="job-duties">
-                <li>Maintain desired quality product delivery as per buyer's requirement.</li>
-                <li>Follow-up the line feeding checklist & check measurement sheet and quality.</li>
-                <li>Confirm first Inline inspection after 100pcs outputs.</li>
-                <li>Ensure quality checking in all stages of finishing are maintain & monitoring and measurement procedure is being followed.</li>
-                <li>Maintain line inspection, accessories inspection, in line inspection & final inspection.</li>
-                <li>Take corrective action for defected products and follow-up so that no defected product can be sent for finishing from sewing and no defected product can be packed for final delivery.</li>
-                <li>Follow-up total garments finishing process & check measurement sheet & quality.</li>
-                <li>Train the subordinates on quality checking procedure and on time checking completion.</li>
-                <li>Co-ordinate with buyer Quality Control for required quality standard product delivery. Maintain required Management Information System (MIS).</li>
-            </ul>
-        </div>
+            <div class="job">
+                <div class="job-title">2. Finishing In charge</div>
+                <div class="company-info">
+                    <i class="fa-regular fa-calendar"></i> January 2014 - July 10, 2016 <br>
+                    <strong>Anupam Hosiery Industries Pvt Ltd.</strong> | Vulta, Rupgonj, Narayangonj<br>
+                    <strong>Buyer:</strong> C&A, H&M, S.Oliver, Tema.
+                </div>
+                <ul class="job-duties">
+                    <li>Focuses on department objectives 0% discount/claim, 0% recheck on final inspection.</li>
+                    <li>Ensure quality system & procedures are maintained as per Group/Company and Buyer requirement.</li>
+                    <li>Train/Coach subordinates on subjects related to technicalities, quality methods, and work & product improvement.</li>
+                    <li>Monitor technical details of styles; follow salesman samples, size set, pilot runs.</li>
+                    <li>Ensure production is processed as per buyer requirements (Technical & General specification).</li>
+                    <li>Ensure follow-up of thread, trims and accessories check/ approval.</li>
+                    <li>Take responsibilities to control of floor, in-line, pre-final, Final inspection.</li>
+                    <li>Keep & extend good relation and communication with buyer qc assist inspection.</li>
+                </ul>
+            </div>
 
-        <div class="job">
-            <div class="job-title">2. Finishing In charge (January 2014 - July 10, 2016)</div>
-            <div class="company-info"><strong>Anupam Hosiery Industries Pvt Ltd.</strong> | Vulta, Rupgonj, Narayangonj, Dhaka<br>
-            <strong>Buyer:</strong> C&A, H&M, S.Oliver, Tema.</div>
-            <ul class="job-duties">
-                <li>Focuses on department objectives 0% discount/claim, 0% recheck on final inspection.</li>
-                <li>Ensure quality system & procedures are maintained as per Group/Company and Buyer requirement.</li>
-                <li>Train/Coach subordinates on subjects related to technicalities, quality methods, and work & product improvement. Coach production member where applicable.</li>
-                <li>Monitor technical details of styles; follow salesman samples, size set, pilot runs.</li>
-                <li>Ensure production is processed as per buyer requirements (Technical & General specification).</li>
-                <li>Ensure follow-up of thread, trims and accessories check/ approval.</li>
-                <li>Ensure samples are made to required quality and sent to Head office on time & check samples.</li>
-                <li>Take responsibilities to control of floor, in-line, pre-final, Final inspection.</li>
-                <li>Keep & extend good relation and communication with buyer qc assist inspection.</li>
-            </ul>
-        </div>
+            <div class="job">
+                <div class="job-title">3. Asst. Finishing In charge</div>
+                <div class="company-info">
+                    <i class="fa-regular fa-calendar"></i> September 1, 2010 - December 31, 2013 <br>
+                    <strong>Dress & Dismatic Pvt Ltd.</strong> | Malibagh Chowdhury Para, Khilgaon, Dhaka<br>
+                    <strong>Buyer:</strong> C&A, H&M, S.Oliver, Tema.
+                </div>
+            </div>
 
-        <div class="job">
-            <div class="job-title">3. Asst. Finishing In charge (September 1, 2010 - December 31, 2013)</div>
-            <div class="company-info"><strong>Dress & Dismatic Pvt Ltd.</strong> | 1101, DIT Road, Malibagh Chowdhury Para, Khilgaon, Dhaka<br>
-            <strong>Buyer:</strong> C&A, H&M, S.Oliver, Tema.</div>
-        </div>
-
-        <div class="job">
-            <div class="job-title">4. Finishing supervisor (September 1, 2008 - August 2010)</div>
-            <div class="company-info"><strong>Hearty apparels Ltd.</strong> | 1101, DIT Road, Malibagh Chowdhurypara, Khilgaon, Dhaka<br>
-            <strong>Buyer:</strong> C&A, H&M, S.Oliver, Tema, Wong, Alcot etc.</div>
+            <div class="job">
+                <div class="job-title">4. Finishing Supervisor</div>
+                <div class="company-info">
+                    <i class="fa-regular fa-calendar"></i> September 1, 2008 - August 2010 <br>
+                    <strong>Hearty apparels Ltd.</strong> | Malibagh Chowdhurypara, Khilgaon, Dhaka<br>
+                    <strong>Buyer:</strong> C&A, H&M, S.Oliver, Tema, Wong, Alcot etc.
+                </div>
+            </div>
         </div>
     </div>
 
-    <h2 class="section-title">Academic Qualification</h2>
+    <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Academic Qualification</h2>
     <table>
         <thead>
             <tr>
@@ -361,46 +529,50 @@
                 <th>Institute</th>
                 <th>Result</th>
                 <th>Pass. Year</th>
-                <th>Duration</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>H.S.C</td>
+                <td><strong>H.S.C</strong></td>
                 <td>Humanities</td>
                 <td>Sirajuddin Memorial College, Jessore</td>
                 <td>Second Division</td>
                 <td>2003</td>
-                <td>2 years</td>
             </tr>
             <tr>
-                <td>S.S.C</td>
+                <td><strong>S.S.C</strong></td>
                 <td>Humanities</td>
                 <td>BPGM Rahmania High School, Jessore</td>
                 <td>First Division</td>
                 <td>2000</td>
-                <td>2 Years</td>
             </tr>
         </tbody>
     </table>
 
-    <h2 class="section-title">Career & Application Information</h2>
+    <h2 class="section-title"><i class="fa-solid fa-chart-line"></i> Career & Application Info</h2>
     <div class="info-grid">
-        <div class="info-item"><span>Looking For:</span> Mid-Level Job</div>
-        <div class="info-item"><span>Available For:</span> Full Time</div>
-        <div class="info-item"><span>Present Salary:</span> Tk. 74,400</div>
-        <div class="info-item"><span>Expected Salary:</span> Tk. 90,000</div>
-        <div class="info-item"><span>Preferred Job:</span> Garments/Textile</div>
-        <div class="info-item"><span>Preferred District:</span> Anywhere in Bangladesh</div>
-        <div class="info-item"><span>Organization Type:</span> Buying House; Garments</div>
+        <div class="info-card"><span>Looking For:</span> Mid-Level Job</div>
+        <div class="info-card"><span>Available For:</span> Full Time</div>
+        <div class="info-card"><span>Present Salary:</span> Tk. 74,400</div>
+        <div class="info-card"><span>Expected Salary:</span> Tk. 90,000</div>
+        <div class="info-card"><span>Preferred Job:</span> Garments/Textile</div>
+        <div class="info-card"><span>Organization Type:</span> Buying House; Garments</div>
+        <div class="info-card" style="grid-column: 1 / -1;"><span>Preferred District:</span> Anywhere in Bangladesh</div>
     </div>
 
-    <h2 class="section-title">Specialization</h2>
-    <p><strong>Field of Specialization:</strong> Quality Assurance, Finishing Production & Planning.</p>
-    <p><strong>Description:</strong> Having project Experience on Woven Garments-Bottom, Jacket. Application Software: Website Browse.</p>
-
-    <h2 class="section-title">Language Proficiency</h2>
-    <table>
+    <h2 class="section-title"><i class="fa-solid fa-clipboard-check"></i> Specialization & Languages</h2>
+    <div class="info-grid">
+        <div class="info-card" style="grid-column: 1 / -1;">
+            <span>Specialization:</span> 
+            <div>
+                <strong>Quality Assurance, Finishing Production & Planning.</strong><br>
+                Having project Experience on Woven Garments-Bottom, Jacket.<br>
+                Application Software: Website Browse.
+            </div>
+        </div>
+    </div>
+    
+    <table style="margin-top: 15px;">
         <thead>
             <tr>
                 <th>Language</th>
@@ -411,13 +583,13 @@
         </thead>
         <tbody>
             <tr>
-                <td>Bangla</td>
+                <td><strong>Bangla</strong></td>
                 <td>High</td>
                 <td>High</td>
                 <td>High</td>
             </tr>
             <tr>
-                <td>English</td>
+                <td><strong>English</strong></td>
                 <td>Medium</td>
                 <td>Medium</td>
                 <td>Medium</td>
@@ -425,26 +597,27 @@
         </tbody>
     </table>
 
-    <h2 class="section-title">Personal Details</h2>
+    <h2 class="section-title"><i class="fa-solid fa-address-card"></i> Personal Details</h2>
     <div class="info-grid">
-        <div class="info-item"><span>Father's Name:</span> Md. Shamsur Rahman</div>
-        <div class="info-item"><span>Mother's Name:</span> Shufia Begum</div>
-        <div class="info-item"><span>Date of Birth:</span> March 5, 1983</div>
-        <div class="info-item"><span>Gender:</span> Male</div>
-        <div class="info-item"><span>Height:</span> 5' 6"</div>
-        <div class="info-item"><span>Blood Group:</span> O+</div>
-        <div class="info-item"><span>Marital Status:</span> Married</div>
-        <div class="info-item"><span>Nationality:</span> Bangladeshi</div>
-        <div class="info-item"><span>Religion:</span> Islam</div>
-        <div class="info-item" style="grid-column: 1 / -1;"><span>Permanent Address:</span> Vill-Putikhali, Post-Putikhali, Upzilla-Murelgonj, Dist-Bagerhat.</div>
+        <div class="info-card"><span>Father's Name:</span> Md. Shamsur Rahman</div>
+        <div class="info-card"><span>Mother's Name:</span> Shufia Begum</div>
+        <div class="info-card"><span>Date of Birth:</span> March 5, 1983</div>
+        <div class="info-card"><span>Gender:</span> Male</div>
+        <div class="info-card"><span>Marital Status:</span> Married</div>
+        <div class="info-card"><span>Blood Group:</span> O+</div>
+        <div class="info-card"><span>Religion:</span> Islam</div>
+        <div class="info-card"><span>Nationality:</span> Bangladeshi</div>
+        <div class="info-card" style="grid-column: 1 / -1;">
+            <span>Permanent Address:</span> Vill-Putikhali, Post-Putikhali, Upzilla-Murelgonj, Dist-Bagerhat.
+        </div>
     </div>
 
     <div class="declaration">
-        <p>I, under signature confirm that, according to my sense and belief, this Resume appropriately expresses my qualifications as well as me. I understand that any willful misstatement described herein may lead to my ineligibility.</p>
+        <p>"I, under signature confirm that, according to my sense and belief, this Resume appropriately expresses my qualifications as well as me. I understand that any willful misstatement described herein may lead to my ineligibility."</p>
         
-        <div class="signature">
+        <div class="signature-box">
             <div>
-                <p>Date : ...........................</p>
+                <p style="font-weight: 600; color: var(--text-main); font-style: normal;">Date: ...........................</p>
             </div>
             <div class="sig-line">
                 Signature
@@ -457,15 +630,14 @@
 <script>
     function switchCV(evt, cvId) {
         // Hide all tab contents
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tab-content");
-        for (i = 0; i < tabcontent.length; i++) {
+        let tabcontent = document.getElementsByClassName("tab-content");
+        for (let i = 0; i < tabcontent.length; i++) {
             tabcontent[i].classList.remove("active");
         }
 
         // Remove active class from all buttons
-        tablinks = document.getElementsByClassName("tab-btn");
-        for (i = 0; i < tablinks.length; i++) {
+        let tablinks = document.getElementsByClassName("tab-btn");
+        for (let i = 0; i < tablinks.length; i++) {
             tablinks[i].classList.remove("active");
         }
 
